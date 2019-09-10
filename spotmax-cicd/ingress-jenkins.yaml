@@ -7,10 +7,10 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: .spotmaxtech.com
+    - host: jenkins-k8s.spotmaxtech.com
       http:
         paths:
           - backend:
-              serviceName: elasticsearch-master
-              servicePort: 9200
+              serviceName: jenkins
+              servicePort: 8080
             path: /
