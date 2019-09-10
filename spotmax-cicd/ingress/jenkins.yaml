@@ -7,7 +7,7 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: jenkins-k8s.spotmaxtech.com
+    - host: .spotmaxtech.com
       http:
         paths:
           - backend:
