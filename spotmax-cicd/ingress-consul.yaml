@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: consul
+  namespace: default
+spec:
+  rules:
+    - host: consul.spotmaxtech.com
+      http:
+        paths:
+          - backend:
+              serviceName: consul-ui
+              servicePort: 8500
+            path: /
