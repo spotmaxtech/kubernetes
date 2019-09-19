@@ -17,7 +17,7 @@
 ## 我们的应用构成
 ![spotmax_all](./assets/spotmax_all.png)
 
-## 全部都是docker
+## 这些都是docker管理
 ![spotmax_docker](./assets/spotmax_docker.png)
 
 ## 日常工作流
@@ -40,17 +40,25 @@
 
 ## jenkins
 [jenkins charts](https://github.com/helm/charts/tree/master/stable/jenkins)
+```bash
 helm install --name jenkins stable/jenkins
+```
 
 ## elasticsearch
 
 ## kibana
 
 ## consul
+[consul_charts](https://github.com/helm/charts/tree/master/stable/consul)
+```bash
+helm install --name consul stable/consul
+```
+
 
 ## mongo
-
-helm install --name mongodb --set service.type=LoadBalancer --set mongodbRootPassword=mongoHaveFun stable/mongodb
+```bash
+helm install --name mongodb --set service.type=LoadBalancer --set mongodbRootPassword=password stable/mongodb
+```
 
 # 一些经验
 
