@@ -45,8 +45,14 @@ helm install --name jenkins stable/jenkins
 ```
 
 ## elasticsearch
+```bash
+helm install --name elasticsearch elastic/elasticsearch
+```
 
 ## kibana
+```bash
+helm install --name kibana elastic/kibana
+```
 
 ## consul
 [consul_charts](https://github.com/helm/charts/tree/master/stable/consul)
