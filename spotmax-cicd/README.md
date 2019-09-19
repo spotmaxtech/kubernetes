@@ -1,5 +1,5 @@
 # All on Kubernetes
-> Kubernetes是未来的Linux操作系统。所有应用会像手机APP一样简单。
+> Kubernetes是未来的Linux操作系统, 应用会像手机APP一样简单。
 
 技术从业者必备的基础知识，不会在容器化环境工作的人5年内被淘汰，无论研发、运维与测试。
 
