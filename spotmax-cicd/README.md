@@ -35,7 +35,7 @@
 
 *kubernetes release*
 > 1. 编写chart
-> 2. 编写ingress(是否单独制作
+> 2. 编写ingress(是否单独制作)
 > 3. helm install ONE CLICK!)
 
 ## jenkins
