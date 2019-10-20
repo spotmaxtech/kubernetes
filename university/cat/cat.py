@@ -16,7 +16,7 @@ class myHandler(BaseHTTPRequestHandler):
 
         self.wfile.write("Hello World! I'm little cat!\n")
         self.wfile.write("Hostname: " + hostname + "\n")
-        self.wfile.write("Ip:       " + ip)
+        self.wfile.write("Ip:       " + ip + "\n")
         return
 
 if __name__ == "__main__":
