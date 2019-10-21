@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cat-manual-v2
+  labels:
+    creation_method: manual
+    env: prod
+spec:
+  containers:
+  - image: spotmax/cat
+    name: cat
+    ports:
+    - containerPort: 5000
+      protocol: TCP
+
