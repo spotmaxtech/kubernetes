@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: cat
+spec:
+  replicas: 3
+  selector:
+    app: cat
+  template:
+    metadata:
+      labels:
+        app: cat
+    spec:
+      containers:
+        - name: cat
+          image: spotmax/cat
+          ports:
+            - containerPort: 5000
+              protocol: TCP
