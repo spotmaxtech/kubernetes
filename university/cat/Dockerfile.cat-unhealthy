@@ -1,0 +1,4 @@
+FROM python:2.7-slim
+ADD cat-unhealthy.py /cat-unhealthy.py
+ENTRYPOINT ["python", "cat-unhealthy.py"]
+

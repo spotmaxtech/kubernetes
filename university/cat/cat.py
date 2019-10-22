@@ -3,13 +3,15 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
 PORT = 5000
 
-class myHandler(BaseHTTPRequestHandler):
+
+class MyHandler(BaseHTTPRequestHandler):
 
     # Handler for the GET requests
     def do_GET(self):
         self.send_response(200)
-        self.send_header('Content-type','text/html')
+        self.send_header('Content-type', 'text/html')
         self.end_headers()
+
         # Send the html message
         hostname = socket.gethostname()
         ip = socket.gethostbyname(hostname)
@@ -19,15 +21,11 @@ class myHandler(BaseHTTPRequestHandler):
         self.wfile.write("Ip:       " + ip + "\n")
         return
 
+
 if __name__ == "__main__":
-    try:
-        server = HTTPServer(('', PORT), myHandler)
-        print 'Started httpserver on port ' , PORT
+    server = HTTPServer(('', PORT), MyHandler)
+    print 'Started http server on port ', PORT
 
-        # Wait forever for incoming htto requests
-        server.serve_forever()
-
-    except KeyboardInterrupt:
-        print '^C received, shutting down the web server'
-        server.socket.close()
+    # Wait forever for incoming http requests
+    server.serve_forever()
 

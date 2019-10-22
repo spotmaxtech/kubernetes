@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cat-unhealthy
+spec:
+  containers:
+  - image: spotmax/cat-unhealthy
+    name: cat
+    ports:
+    - containerPort: 5000
+      protocol: TCP
+    livenessProbe:
+      httpGet:
+        path: /health
+        port: 5000
