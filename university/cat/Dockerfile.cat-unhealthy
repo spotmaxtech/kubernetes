@@ -1,4 +1,4 @@
-FROM python:2.7-slim
+FROM python:2.7-alpine
 ADD cat-unhealthy.py /cat-unhealthy.py
 ENTRYPOINT ["python", "cat-unhealthy.py"]
 

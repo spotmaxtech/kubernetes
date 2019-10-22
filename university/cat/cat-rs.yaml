@@ -16,5 +16,5 @@ spec:
         - name: cat
           image: spotmax/cat
           ports:
-            - containerPort: 5000
-              protocol: TCP
+            - name: http
+              containerPort: 5000
