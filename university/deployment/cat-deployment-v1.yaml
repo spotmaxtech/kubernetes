@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: cat
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: cat
+      labels:
+        app: cat
+    spec:
+      containers:
+        - image: spotmax/cat:v1
+          name: cat
+          ports:
+            - containerPort: 5000
+              name: http
+              protocol: TCP
