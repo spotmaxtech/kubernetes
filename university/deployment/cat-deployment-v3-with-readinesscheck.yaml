@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: cat
+spec:
+  replicas: 3
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      name: cat
+      labels:
+        app: cat
+    spec:
+      containers:
+        - image: spotmax/cat:v3
+          name: cat
+          ports:
+            - containerPort: 5000
+              name: http
+              protocol: TCP
+          readinessProbe:
+            periodSeconds: 1
+            httpGet:
+              path: /
+              port: http

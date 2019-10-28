@@ -35,7 +35,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.wfile.write("Hello World! I'm little cat!\n")
             self.wfile.write("Hostname: " + hostname + "\n")
             self.wfile.write("Ip:       " + ip + "\n")
-            self.wfile.write("Version:  v3")
+            self.wfile.write("Version:  v3\n")
             return
 
 
