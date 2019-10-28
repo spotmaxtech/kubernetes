@@ -24,4 +24,4 @@ spec:
     app: cat
   ports:
   - port: 80
-    target: 5000
+    targetPort: 5000
