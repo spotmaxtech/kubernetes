@@ -11,17 +11,35 @@ spec:
         app: cat
     spec:
       containers:
-      - image: spotmax/cat:v1
-        name: cat
+        - image: spotmax/cat:v1
+          name: cat
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: cat
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: cat
   ports:
-  - port: 80
-    targetPort: 5000
+    - port: 80
+      targetPort: http
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cat
+spec:
+  rules:
+    - host: cat.example.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: cat
+              servicePort: 80
