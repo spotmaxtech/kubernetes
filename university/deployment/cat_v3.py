@@ -14,23 +14,14 @@ class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
 
         global HEALTH_COUNT
-        parsed_path = urlparse.urlparse(self.path)
-        if parsed_path.path == '/health':
-            HEALTH_COUNT += 1
-            if HEALTH_COUNT <= 5:
-                self.send_response(200)
-                self.send_header('Content-type', 'text/html')
-                self.end_headers()
+        HEALTH_COUNT += 1
+        if HEALTH_COUNT > 5:
+            self.send_response(500)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
 
-                self.wfile.write("healthy " + str(HEALTH_COUNT))
-                return
-            else:
-                self.send_response(500)
-                self.send_header('Content-type', 'text/html')
-                self.end_headers()
-
-                self.wfile.write("unhealthy")
-                return
+            self.wfile.write("unhealthy")
+            return
         else:
 
             self.send_response(200)
