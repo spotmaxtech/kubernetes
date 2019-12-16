@@ -1,0 +1,8 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1beta1
+metadata:
+  name: alicloud-disk-efficiency-hangzhou
+provisioner: alicloud/disk
+parameters:
+  type: cloud_efficiency
+  zoneid: cn-hongkong-c,cn-hongkong-b
