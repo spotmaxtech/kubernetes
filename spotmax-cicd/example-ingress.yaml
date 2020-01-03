@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-  name: consul
-  namespace: default
+  name: example-ingress
+  namespace: ingress
 spec:
   rules:
-    - host: consul.spotmaxtech.com
+    - host: example.kmax.com
       http:
         paths:
           - backend:
-              serviceName: consul-ui
-              servicePort: 8500
+              serviceName: hello-jenkins
+              servicePort: 8080
             path: /
