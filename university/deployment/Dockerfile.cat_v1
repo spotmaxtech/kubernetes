@@ -1,4 +1,0 @@
-FROM python:2.7-alpine
-ADD cat_v1.py /cat.py
-ENTRYPOINT ["python", "cat.py"]
-
